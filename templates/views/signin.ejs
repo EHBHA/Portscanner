@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Scanner : SignIn</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="homes.css">
+    <link rel="shortcut icon" href="pics/scanvectorfavicon.jpg" type="image/x-icon">
+    
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div id="signinp">
+        <form action="/signin" method="post" name="mysignin" id="signinf">
+            <h2 id="myheadin">SignIn</h2>
+            <label for="email" id="emaillabel">Email</label><br>
+            <input type="email" name="email" id="myemailin" required>
+            <br><br>
+            <label for="password" id="passlabel">Password</label><br>
+            <input type="password" name="password" id="mypassin"  minlength="8" required>
+            <br><br>
+            <span class="formerror" id="passwordin"> 
+                <%if(info.length>0){%>
+                <%= info %><% }%> 
+            </span>
+            <br>
+            <button type="submit" id="mybutnin" onclick="clersc()">SignIn</button>
+        </form>
+        <form action="/signup" method="get" id="reversein">
+            <p>Dont have an account?  <button type="submit" id="revbtnin">Create one</button></p> 
+        </form>
+    </div>
+    <div class="copy">
+        <footer class="copyright">copyright © 2023 all rights reserved</footer>
+    </div>
+</body>
+<!-- <script type="text/javascript">
+    // function preventBack() {
+    //     window.history.forward(); 
+    // }
+      
+    // setTimeout("preventBack()", 0);
+      
+    // window.onunload = function () { null };
+    function clersc() {
+        document.mysignin.email.value="";
+        document.mysignin.password.value="";
+    }
+
+</script> -->
+</html>
